@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FF6B17;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-weight: bold;
+
+}
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#card-orange {
+    width: 55%;
+    height: 100%;
+    color: #ffffff;
+    background-color: #ff6c17;
+    border-radius: 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#card-orange img {
+    opacity: 0.6;
+}
+
+input {
+    padding-left: 15px;
+}
+
+
+#input_qtdMeses {
+    width: 250px;
+    height: 32px;
+    border-radius: 20px;
+    border: none;
+    margin: 3px 0 10px 0;
+    outline-color: #3E6292;
+    background-color: #FFF9EC;
+    color: #FF6B17;
+    font-weight: bold;
+}
+
+#id_button {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #FFF9EC;
+    color: #FFF9EC;
+    background: transparent;
+    font-weight: bold;
+    font-size: 12.5px;
+}
+
+#id_button:hover {
+    background-color: #FFF9EC;
+    cursor: pointer;
+    color: #FF6B17;
+    border: 1px solid #FF6B17;
+}
+
+#div_mensagemMensal {
+    background-color: #FFF9EC;
+    color: #FF6B17;
+    font-family: "League Spartan", sans-serif;
+    margin: 40px 0 0 0;
+    height: 75%;
+    width: 75%;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#id_green {
+    color: green;
+    font-weight: bold;
+}
+
+#id_red {
+    color: red;
+    font-weight: bold;
+}
+
+#div_DoisInputs {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#input_mensalidadeAcademia, #input_prejuDesistentesMes {
+    width: fit-content;
+    height: 30%;
+    color: #FFF9EC;
+    font-weight: bold;
+    background-color: #FF6B17;
+    border: none;
+    border-radius: 20px;
+    outline-color: #3E6292;
+    font-size: 15px;
+}
+
+#input_mensalidadeAcademia {
+    width: fit-content;
+    padding-left: 40px;
+
+}
+
+#id_primeiroInput {
+    width: fit-content;
+}
+
+#input_prejuDesistentesMes {
+    width: 93%;
+}
+
+#id_calcularPreju {
+    width: 78%;
+    height: 6%;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #FF6B17;
+    background-color: transparent;
+    color: #FF6B17;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+#id_calcularPreju:hover {
+    background-color: #FF6B17;
+    color: #FFF9EC;
+}
+
+#id_cifrao {
+    position: absolute;
+    top: 50;
+    left: 50;
+    margin: 2px 0 0 10px;
+    color: #FFF9EC;
+}
+
+#section_resultado {
+    font-size: 20px;
+    
+}
+
+#div_resultado {
+    font-size: 30px;
+    margin-bottom: 40px;
+}

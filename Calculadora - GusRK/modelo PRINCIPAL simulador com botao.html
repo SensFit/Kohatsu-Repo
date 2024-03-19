@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="=" width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="main">
+        <section id="card-orange">
+            <img src="SensFIT (500 x 300).png" alt="Logo SensFIT" width="300px">
+            <h1>SIMULADOR FINANCEIRO</h1> <br>
+            <div class="verRecuperacaoSensFIT">
+                <p>Veja quanto a SensFIT pode recuperar da sua perda inicial</p><br>
+                Quantos meses deseja calcular? <br> <input id="input_qtdMeses" autocomplete="off"> <br>
+                <button id="id_button" onclick="verFaturamentoMensal()">
+                    Verificação Mensal
+                </button>
+            </div>
+
+            <div id="div_mensagemMensal">
+                <div id="div_mensagemPrejuizo"></div>
+            </div>
+        </section>
+    </section>
+
+</body>
+
+</html>
+<script>
+    function verFaturamentoMensal() {
+        var qtdMeses = Number(input_qtdMeses.value)
+
+        if (qtdMeses <= 0) {
+            div_mensagemMensal.innerHTML = ``
+            div_mensagemPrejuizo.innerHTML = ``
+        }
+        if (qtdMeses >= 1) {
+            div_mensagemMensal.innerHTML = `<span id="id_divisoria"><br> <br>
+            <div id="div_DoisInputs">
+                <div id="id_primeiroInput">
+                    Mensalidade da <br> academia <br>
+                    <div id="id_cifrao">
+                        R$
+                    </div>
+                        <input id="input_mensalidadeAcademia" autocomplete="off"> <br> <br>
+                </div>
+                <div id="id_segundoInput">
+                    Quantos alunos desistiram <br>nesse(s) ${qtdMeses} mes(es)? <br>
+                    <input id="input_prejuDesistentesMes" autocomplete="off">
+                </div>
+            </div>
+            
+            <button onclick="calcularPrejuizo()" id="id_calcularPreju">
+                CALCULAR PREJUÍZO
+            </button> <br> <br>
+            </span>`
+        }
+    }
+
+    var calculoRealizado = false;
+    
+    function calcularPrejuizo() {
+        
+        if (calculoRealizado != true) {
+
+            var qtdMeses = Number(input_qtdMeses.value);
+            var mensalidade = Number(input_mensalidadeAcademia.value);
+            var desistentesTotaisMensais = Number(input_prejuDesistentesMes.value);
+            var desistentesFaltaTempo = desistentesTotaisMensais * 0.6;/* Pegando 60% dos desistentes totais */
+            var converterParaAderente = desistentesFaltaTempo * 0.7; /* Conseguimos converter 70% para aderente ao adquirir nosso produto de consulta via gráficos com dados captados dos sensores de proximidade*/
+            var prejuizoMensalidade = desistentesFaltaTempo * mensalidade;
+            var faturamenteMensalidade = converterParaAderente * mensalidade;
+
+            div_mensagemMensal.innerHTML += `
+            <section id="section_resultado">
+                <div id="div_resultado">RESULTADO</div>
+                Com nossa solução, é possível salvar <span id="id_green">${converterParaAderente} pessoas</span> <br> <br>
+                A SensFIT recuperou <span id="id_green">${faturamenteMensalidade.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span> <br>
+                Reduzindo a perda inicial de <span id="id_red">${prejuizoMensalidade.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+            </section>`;
+            calculoRealizado = true;
+        }
+    }
+</script>
